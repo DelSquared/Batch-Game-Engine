@@ -1,4 +1,4 @@
-//This executable was created in hopes to speed up frame drawing
+//This executable was created in hopes to speed up frame drawing. Needs to be precompiled and stored in the same folder as game.bat
 
 #include<stdio.h>
 #include <stdlib.h>
