@@ -1,3 +1,5 @@
+//This executable was created in hopes to speed up frame drawing
+
 #include<stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -7,7 +9,7 @@ struct Entity {
    int y;
 };
 
-int main(int argc,char* argv[]) //dimX,dimY,pX,pY,e1X,e1Y,e2X,e2Y,e3X,e3Y,...
+int main(int argc,char* argv[]) //name,dimX,dimY,pX,pY,e1X,e1Y,e2X,e2Y,e3X,e3Y,...
 {
     if (argc%2==1){
         int i;
