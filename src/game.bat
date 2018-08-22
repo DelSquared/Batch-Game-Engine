@@ -1,4 +1,6 @@
+::silly starting screen that could be commented out while debugging
 @echo off
+TITLE Game
 echo Welcome to the game!
 pause
 cls
