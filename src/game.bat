@@ -29,14 +29,14 @@ set e3Y=10
 ::draw-loop
 for /l %%i in (1, 1, 20) do (
       call :frame
+      PING localhost -n 0.75 >NUL
 )
 
 pause
 
 ::frame-call subroutine
 :frame
-   cls
-   graphics.exe "%dimX%" "%dimY%" "%pX%" "%pY%" "%e1X%" "%e1Y%" "%e2X%" "%e2Y%" "%e3X%" "%e3Y%"
-   ::example movement for demonstration
-   set /a pX=pX-1
-   PING localhost -n 0.75 >NUL
+      cls
+      graphics.exe "%dimX%" "%dimY%" "%pX%" "%pY%" "%e1X%" "%e1Y%" "%e2X%" "%e2Y%" "%e3X%" "%e3Y%"
+      ::example movement for demonstration
+      set /a pX=pX-1
