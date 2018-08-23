@@ -27,14 +27,14 @@ set /a pX=%dimX%/2
 set /a pY=%dimY%/2
 
 ::enemies x,y (initialised randomly, in the future the initialisation will be a separate subroutine to respawn them)
-set /a e1X=%random% %%(%dimX%-3) +2
-set /a e1Y=%random% %%(%dimY%-3) +2
+set /a e[1].x=%random% %%(%dimX%-3) +2
+set /a e[1].y=%random% %%(%dimY%-3) +2
 
-set /a e2X=%random% %%(%dimX%-3) +2
-set /a e2Y=%random% %%(%dimY%-3) +2
+set /a e[2].x=%random% %%(%dimX%-3) +2
+set /a e[2].y=%random% %%(%dimY%-3) +2
 
-set /a e3X=%random% %%(%dimX%-3) +2
-set /a e3Y=%random% %%(%dimY%-3) +2
+set /a e[3].x=%random% %%(%dimX%-3) +2
+set /a e[3].y=%random% %%(%dimY%-3) +2
 
 call :draw
 
@@ -48,7 +48,7 @@ call :draw
 ::frame-call
 :frame
    cls
-   graphics.exe %dimX% %dimY% %floor% %wall% %player% %enemy% %pX% %pY% %e1X% %e1Y% %e2X% %e2Y% %e3X% %e3Y%
+   graphics.exe %dimX% %dimY% %floor% %wall% %player% %enemy% %pX% %pY% %e[1].x% %e[1].y% %e[2].x% %e[2].y% %e[3].x% %e[3].y%
 
 ::display current points
 :points
