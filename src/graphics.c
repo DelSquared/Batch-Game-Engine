@@ -2,7 +2,6 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <unistd.h>
 
 struct Entity {
    int x;
@@ -49,7 +48,6 @@ int main(int argc,char* argv[]) //name,dimX,dimY,floorIco,wallIco,playerIco,enem
          }
          printf("\n");
       }
-      usleep(100000); //gives user time to view frame
    }
    else printf("invalid");
 }
