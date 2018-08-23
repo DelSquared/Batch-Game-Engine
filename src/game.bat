@@ -21,11 +21,11 @@ set left=a
 set down=s
 set right=d
 
-::player x,y
+::player x,y (initialised at the centre of the canvas)
 set /a pX=%dimX%/2
 set /a pY=%dimY%/2
 
-::enemies x,y
+::enemies x,y (initialised randomly, in the future the initialisation will be a separate subroutine to respawn them)
 set /a e1X=%random% %%(%dimX%-1) +1
 set /a e1Y=%random% %%(%dimY%-1) +1
 
