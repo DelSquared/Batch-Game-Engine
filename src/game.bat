@@ -7,12 +7,18 @@ cls
 
 set dimX="70"
 set dimY="20"
+set ctrl="."
 
 ::These are arguments for the C executable
 set wall="#"
 set floor="."
 set player="@"
 set enemy="E"
+
+set up=w
+set left=a
+set down=s
+set right=d
 
 ::player x,y
 set pX=35
@@ -28,16 +34,65 @@ set e2Y=11
 set e3X=40
 set e3Y=10
 
-::draw-loop
-for /l %%i in (1, 1, 20) do (
-      call :frame
-)
+call :draw
+call :input
 
-pause
+::if "%pY%-1" geq "0" 
+::if "%pX%-1" geq "0" 
+::if "%pY%+1" leq "%dimY%-1"
+::if "%pX%+1" leq "%dimX%-1"  
 
-::frame-call subroutine
+
+::draw
+:draw
+   call :frame
+   call :input
+   
+
+::frame-call
 :frame
-      cls
-      graphics.exe %dimX% %dimY% %floor% %wall% %player% %enemy% %pX% %pY% %e1X% %e1Y% %e2X% %e2Y% %e3X% %e3Y%
-      ::example movement for demonstration
-      set /a pX=pX-1
+   cls
+   graphics.exe %dimX% %dimY% %floor% %wall% %player% %enemy% %pX% %pY% %e1X% %e1Y% %e2X% %e2Y% %e3X% %e3Y%
+
+
+::input
+:input
+   set /p ctrl= Enter command: 
+   call :process
+
+
+::process controls
+:process
+if "%ctrl%"=="%up%" (
+      call :moveUp
+   ) else (
+   if "%ctrl%"=="%left%" (
+      call :moveLeft
+   ) else (
+   if "%ctrl%"=="%down%" (
+      call :moveDown
+   ) else (
+   if "%ctrl%"=="%right%" (
+      call :moveRight
+   ))))
+
+
+::keybind actions
+:moveUp
+   set /a pY=pY-1
+   call :draw
+
+
+:moveLeft
+   set /a pX=pX-1
+   call :draw
+
+
+:moveDown
+   set /a pY=pY+1
+   call :draw
+
+
+:moveRight
+   set /a pX=pX+1
+   call :draw
