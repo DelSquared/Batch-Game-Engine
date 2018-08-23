@@ -27,14 +27,14 @@ set /a pX=%dimX%/2
 set /a pY=%dimY%/2
 
 ::enemies x,y (initialised randomly, in the future the initialisation will be a separate subroutine to respawn them)
-set /a e1X=%random% %%(%dimX%-1) +1
-set /a e1Y=%random% %%(%dimY%-1) +1
+set /a e1X=%random% %%(%dimX%-2) +2
+set /a e1Y=%random% %%(%dimY%-2) +2
 
-set /a e2X=%random% %%(%dimX%-1) +1
-set /a e2Y=%random% %%(%dimY%-1) +1
+set /a e2X=%random% %%(%dimX%-2) +2
+set /a e2Y=%random% %%(%dimY%-2) +2
 
-set /a e3X=%random% %%(%dimX%-1) +1
-set /a e3Y=%random% %%(%dimY%-1) +1
+set /a e3X=%random% %%(%dimX%-2) +2
+set /a e3Y=%random% %%(%dimY%-2) +2
 
 call :draw
 
