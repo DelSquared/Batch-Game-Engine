@@ -36,13 +36,6 @@ set e3X=40
 set e3Y=10
 
 call :draw
-call :input
-
-::if "%pY%-1" geq "0" 
-::if "%pX%-1" geq "0" 
-::if "%pY%+1" leq "%dimY%-1"
-::if "%pX%+1" leq "%dimX%-1"  
-
 
 ::draw
 :draw
