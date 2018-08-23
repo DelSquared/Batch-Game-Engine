@@ -22,18 +22,18 @@ set down=s
 set right=d
 
 ::player x,y
-set pX=35
-set pY=10
+set /a pX=%dimX%/2
+set /a pY=%dimY%/2
 
 ::enemies x,y
-set e1X=37
-set e1Y=12
+set /a e1X=%random% %%(%dimX%-1) +1
+set /a e1Y=%random% %%(%dimY%-1) +1
 
-set e2X=38
-set e2Y=11
+set /a e2X=%random% %%(%dimX%-1) +1
+set /a e2Y=%random% %%(%dimY%-1) +1
 
-set e3X=40
-set e3Y=10
+set /a e3X=%random% %%(%dimX%-1) +1
+set /a e3Y=%random% %%(%dimY%-1) +1
 
 call :draw
 
