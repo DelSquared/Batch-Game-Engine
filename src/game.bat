@@ -8,7 +8,7 @@ cls
 set dimX="70"
 set dimY="20"
 
-::These will be implemented in the C executable in the future but currently not
+::These are arguments for the C executable
 set wall="#"
 set floor="."
 set player="@"
