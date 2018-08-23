@@ -5,8 +5,8 @@ echo Welcome to the game!
 pause
 cls
 
-set dimX="70"
-set dimY="20"
+set dimX=70
+set dimY=20
 set ctrl="."
 set pts=0
 
