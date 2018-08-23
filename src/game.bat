@@ -71,7 +71,7 @@ if "%ctrl%"=="%up%" (
    ))))
 
 
-::keybind actions
+::keybind actions (there's a known bug here where the player can walk outside of the map)
 :moveUp
    set /a pY=pY-1
    call :draw
