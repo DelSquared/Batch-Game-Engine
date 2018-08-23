@@ -8,6 +8,7 @@ cls
 set dimX="70"
 set dimY="20"
 set ctrl="."
+set pts=0
 
 ::These are arguments for the C executable
 set wall="#"
@@ -40,6 +41,7 @@ call :draw
 ::draw
 :draw
    call :frame
+   call :points
    call :input
    
 
@@ -48,10 +50,13 @@ call :draw
    cls
    graphics.exe %dimX% %dimY% %floor% %wall% %player% %enemy% %pX% %pY% %e1X% %e1Y% %e2X% %e2Y% %e3X% %e3Y%
 
+::display current points
+:points
+   echo Points: %pts%
 
 ::input
 :input
-   set /p ctrl= Enter command: 
+   set /p ctrl= Enter command (pressing ENTER reuses last command): 
    call :process
 
 
