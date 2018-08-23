@@ -5,14 +5,14 @@ echo Welcome to the game!
 pause
 cls
 
-set dimX= 70
-set dimY= 20
+set dimX="70"
+set dimY="20"
 
 ::These will be implemented in the C executable in the future but currently not
-set wall= "#"
-set floor= "."
-set player= "@"
-set enemy= "E"
+set wall="#"
+set floor="."
+set player="@"
+set enemy="E"
 
 ::player x,y
 set pX=35
@@ -31,7 +31,6 @@ set e3Y=10
 ::draw-loop
 for /l %%i in (1, 1, 20) do (
       call :frame
-      PING localhost -n 0.75 >NUL
 )
 
 pause
@@ -39,6 +38,6 @@ pause
 ::frame-call subroutine
 :frame
       cls
-      graphics.exe "%dimX%" "%dimY%" "%pX%" "%pY%" "%e1X%" "%e1Y%" "%e2X%" "%e2Y%" "%e3X%" "%e3Y%"
+      graphics.exe %dimX% %dimY% %floor% %wall% %player% %enemy% %pX% %pY% %e1X% %e1Y% %e2X% %e2Y% %e3X% %e3Y%
       ::example movement for demonstration
       set /a pX=pX-1
