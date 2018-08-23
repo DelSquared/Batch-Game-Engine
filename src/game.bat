@@ -15,6 +15,7 @@ set floor="."
 set player="@"
 set enemy="E"
 
+::keybinds
 set up=w
 set left=a
 set down=s
