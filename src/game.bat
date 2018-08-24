@@ -76,22 +76,22 @@ if "%ctrl%"=="%up%" (
    ))))
 
 
-::keybind actions (there's a known bug here where the player can walk outside of the map)
+::keybind actions (wrap-around/flat-torus topology)
 :moveUp
-   set /a pY=pY-1
+   set /a pY=(pY-1+dimY)%%dimY)
    call :draw
 
 
 :moveLeft
-   set /a pX=pX-1
+   set /a pX=(pX-1+dimX)%%dimX)
    call :draw
 
 
 :moveDown
-   set /a pY=pY+1
+   set /a pY=(pY+1)%%dimY)
    call :draw
 
 
-:moveRight
-   set /a pX=pX+1
+:moveRight 
+   set /a pX=(pX+1)%%dimX)
    call :draw
